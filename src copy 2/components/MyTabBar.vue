@@ -1,18 +1,15 @@
 <template>
-  <!--    iconText: "icon-shangpinliebiao",
-        text: "商品列表",
-        componentName: "MyGoodsList" -->
+
   <div class="my-tab-bar">
-    <div 
-    class="tab-item" 
-    :class="{current:current == index}"
-    v-for="(item,index) in list" 
-    :key="item.componentName"
-    @click="btn(index,item.componentName)"
+    <div
+      class="tab-item"
+      :class="{ current: current == index }"
+      v-for="(item, index) in list"
+      :key="item.componentName"
+      @click="btn(index,item.componentName)"
     >
-      <!-- 图标 -->
       <span class="iconfont" :class="item.iconText"></span>
-      <!-- 文字 -->
+
       <span>{{ item.text }}</span>
     </div>
   </div>
@@ -20,10 +17,10 @@
 
 <script>
 export default {
-  data(){
-    return{
-      current:0
-    }
+  data() {
+    return {
+      current: 0,
+    };
   },
   props: {
     list: {
@@ -38,17 +35,24 @@ export default {
       },
     },
   },
-  methods:{
-    btn(index,name){
+  methods: {
+    // btn(path,name){
+    //   this.$router.push({
+    //     name: name,
+    //   }
+
+    //   )
+    // }
+    btn(index, name) {
       this.current = index;
       this.$router.push({
-        name:name
+        name: name,
       })
-     /*  this.$emit("change", this.list[val].componentName);
+      /*  this.$emit("change", this.list[val].componentName);
       console.log(this.list[val].componentName); */
       // this.$parent.comName = this.list[val].componentName;
-    }
-  }
+    },
+  },
 };
 </script>
 

@@ -2,7 +2,7 @@
   <div>
     <MyHeader title="TabBar"></MyHeader>
     <div class="main" style="margin-top:45px">
-      <router-view></router-view>
+      <component :is="comName"></component>
     </div>
     <MyTable></MyTable>
     <MyTabBar :list="tabList" ></MyTabBar>
@@ -13,9 +13,9 @@
 import MyHeader from "./components/MyHeader.vue";
 import MyTable from "./components/MyTable.vue";
 import MyTabBar from "./components/MyTabBar.vue";
-// import MyGoodsList from "./views/MyGoodsList.vue";
-// import MyGoodsSearch from "./views/MyGoodsSearch.vue";
-// import MyUserInfo from "./views/MyUserInfo.vue";
+import MyGoodsList from "./views/MyGoodsList.vue";
+import MyGoodsSearch from "./views/MyGoodsSearch.vue";
+import MyUserInfo from "./views/MyUserInfo.vue";
 export default {
   data() {
     return {
@@ -43,9 +43,9 @@ export default {
     MyHeader,
     MyTable,
     MyTabBar,
-    // MyGoodsList,
-    // MyGoodsSearch,
-    // MyUserInfo,
+    MyGoodsList,
+    MyGoodsSearch,
+    MyUserInfo,
   },
   /* methods:{
     changeFn(val){
